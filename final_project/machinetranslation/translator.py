@@ -16,26 +16,25 @@ language_translator = LanguageTranslatorV3(
 
 language_translator.set_service_url(url)
 
-def english_to_french(englishText):
+def english_to_french(english_text):
     ''' This function translates input english text to French'''
 
-    translatedText = language_translator.translate(
-    englishText,
-    model_id='en-fr').get_result()
-    aList= translatedText["translations"]
-    tList = aList[0]
-    frenchText = tList["translation"]
-    return frenchText
+    translated_text = language_translator.translate(
+    english_text,model_id='en-fr').get_result()
+    a_list= translated_text["translations"]
+    t_list = a_list[0]
+    french_text = t_list["translation"]
+    return french_text
 
 
-def french_to_english(frenchText):
+def french_to_english(french_text):
     ''' This function translates input french text to English'''
 
-    translatedText = language_translator.translate(
-    frenchText,
+    translated_text = language_translator.translate(
+    french_text,
     model_id='fr-en').get_result()
-    aList= translatedText["translations"]
-    tList = aList[0]
-    englishText = tList["translation"]
-    return englishText
+    a_list= translated_text["translations"]
+    t_list = a_list[0]
+    english_text = t_list["translation"]
+    return english_text
 
